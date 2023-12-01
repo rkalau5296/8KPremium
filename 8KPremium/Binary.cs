@@ -23,6 +23,10 @@
                     sumZero = 0;
                 }                    
             }
+            if (sumZero > maxAmountZero)
+            {
+                maxAmountZero = sumZero;
+            }
             return maxAmountZero;
         }
     }
