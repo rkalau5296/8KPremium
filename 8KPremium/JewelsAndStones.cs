@@ -26,6 +26,7 @@ namespace _8KPremium
         public int CountJewelsInStonesVer2(string jewels, string stones)
         {
             int result = 0;
+            
             for(int i = 0; i<jewels.Length; i++)
             {
                 result += stones.Count(c => c == jewels[i]);
