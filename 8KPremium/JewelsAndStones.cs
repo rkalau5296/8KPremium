@@ -30,8 +30,15 @@ namespace _8KPremium
             for(int i = 0; i<jewels.Length; i++)
             {
                 result += stones.Count(c => c == jewels[i]);
-            }
-            return result;
+            }                        
+            return result;            
+        }
+        public int CountJewelsInStonesVer3(string jewels, string stones)
+        {
+            return jewels
+                .GroupBy(c => c)
+                .Select(g => new { Character = g.Key, Count = stones.Count(c => c == g.Key) })
+                .Sum(s=>s.Count);          
         }
     }
 }

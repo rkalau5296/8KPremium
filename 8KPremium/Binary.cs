@@ -12,22 +12,25 @@
             {
                 if (numberString[i] == '0')
                 {
-                    sumZero++;
+                    sumZero++;                    
+                }
+                else
+                {
                     if (sumZero > maxAmountZero)
                     {
                         maxAmountZero = sumZero;
                     }
-                }
-                else
-                {                    
                     sumZero = 0;
                 }                    
             }
-            if (sumZero > maxAmountZero)
-            {
-                maxAmountZero = sumZero;
-            }
+            
             return maxAmountZero;
+        }
+        public int BinaryGapVer2(int number)
+        {
+            return number.ToString().Split('1')
+                        .Select(z => z.Length)
+                        .Max();             
         }
     }
 }
